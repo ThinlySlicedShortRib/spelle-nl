@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Home",
+    "latestGames": "Nieuwste Spellen",
+    "categories": "Categorieën",
+    "search": "Zoek spellen...",
+    "searchTitle": "Zoek Spellen",
+    "searchSubtitle": "Vind je volgende favoriete spel",
+    "searchPrompt": "Begin met typen om spellen te zoeken...",
+    "searchHint": "Zoek op titel, genre of beschrijving"
+  },
+  "sidebar": {
+    "footer": {
+      "blogs": "Blogs",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "privacyPolicy": "Privacybeleid",
+      "disclaimer": "Disclaimer"
+    }
+  },
+  "home": {
+    "title": "Welkom bij Spelle.nl",
+    "subtitle": "Je ultieme spellen directory",
+    "description": "Ontdek de beste spellen op alle platforms",
+    "gamesCount": "3000+ spellen",
+    "allFree": "Allemaal gratis",
+    "noInstallation": "Geen installatie",
+    "playWithFriends": "Speel met vrienden",
+    "featuredGames": "Uitgelichte Spellen",
+    "featuredGamesSubtitle": "Ontdek de meest populaire spellen"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Er is een fout opgetreden",
+    "noResults": "Geen resultaten gevonden",
+    "viewMore": "Meer Bekijken",
+    "readMore": "Meer Lezen"
+  },
+  "games": {
+    "latest": "Nieuwste Spellen",
+    "popular": "Populaire Spellen",
+    "trending": "Trending Spellen",
+    "allGames": "Alle Spellen"
+  },
+  "categories": {
+    "title": "Spel Categorieën",
+    "allCategories": "Alle Categorieën",
+    "action": "Actie",
+    "adventure": "Avontuur",
+    "puzzle": "Puzzel",
+    "strategy": "Strategie",
+    "racing": "Racen",
+    "rpg": "RPG",
+    "simulation": "Simulatie",
+    "sports": "Sport",
+    "fighting": "Vechten",
+    "shooter": "Shooter",
+    "platformer": "Platformer",
+    "stealth": "Stealth",
+    "horror": "Horror",
+    "comedy": "Komedie",
+    "educational": "Educatief",
+    "music": "Muziek",
+    "dance": "Dans",
+    "fitness": "Fitness",
+    "cooking": "Koken",
+    "art": "Kunst",
+    "photography": "Fotografie",
+    "travel": "Reizen",
+    "nature": "Natuur",
+    "space": "Ruimte",
+    "fantasy": "Fantasy",
+    "sciFi": "Sci-Fi",
+    "historical": "Historisch",
+    "medieval": "Middeleeuws",
+    "modern": "Modern",
+    "futuristic": "Futuristisch"
+  }
+} 

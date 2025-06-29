@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "latestGames": "Neueste Spiele",
+    "categories": "Kategorien",
+    "search": "Spiele suchen...",
+    "searchTitle": "Spiele Suchen",
+    "searchSubtitle": "Finde dein nächstes Lieblingsspiel",
+    "searchPrompt": "Beginne zu tippen, um Spiele zu suchen...",
+    "searchHint": "Suche nach Titel, Genre oder Beschreibung"
+  },
+  "sidebar": {
+    "footer": {
+      "blogs": "Blogs",
+      "faq": "FAQ",
+      "contact": "Kontakt",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "disclaimer": "Haftungsausschluss"
+    }
+  },
+  "home": {
+    "title": "Willkommen bei Spelle.nl",
+    "subtitle": "Ihr ultimatives Spiele-Verzeichnis",
+    "description": "Entdecken Sie die besten Spiele auf allen Plattformen",
+    "gamesCount": "3000+ Spiele",
+    "allFree": "Alle kostenlos",
+    "noInstallation": "Keine Installation",
+    "playWithFriends": "Mit Freunden spielen",
+    "featuredGames": "Empfohlene Spiele",
+    "featuredGamesSubtitle": "Entdecken Sie die beliebtesten Spiele"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "noResults": "Keine Ergebnisse gefunden",
+    "viewMore": "Mehr Anzeigen",
+    "readMore": "Mehr Lesen"
+  },
+  "games": {
+    "latest": "Neueste Spiele",
+    "popular": "Beliebte Spiele",
+    "trending": "Trending Spiele",
+    "allGames": "Alle Spiele"
+  },
+  "categories": {
+    "title": "Spiele-Kategorien",
+    "allCategories": "Alle Kategorien",
+    "action": "Action",
+    "adventure": "Abenteuer",
+    "puzzle": "Puzzle",
+    "strategy": "Strategie",
+    "racing": "Rennsport",
+    "rpg": "RPG",
+    "simulation": "Simulation",
+    "sports": "Sport",
+    "fighting": "Kampf",
+    "shooter": "Shooter",
+    "platformer": "Platformer",
+    "stealth": "Stealth",
+    "horror": "Horror",
+    "comedy": "Komödie",
+    "educational": "Bildung",
+    "music": "Musik",
+    "dance": "Tanz",
+    "fitness": "Fitness",
+    "cooking": "Kochen",
+    "art": "Kunst",
+    "photography": "Fotografie",
+    "travel": "Reisen",
+    "nature": "Natur",
+    "space": "Weltraum",
+    "fantasy": "Fantasy",
+    "sciFi": "Sci-Fi",
+    "historical": "Historisch",
+    "medieval": "Mittelalter",
+    "modern": "Modern",
+    "futuristic": "Futuristisch"
+  }
+} 

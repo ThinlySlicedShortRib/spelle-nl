@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Home",
+    "latestGames": "Latest Games",
+    "categories": "Categories",
+    "search": "Search games...",
+    "searchTitle": "Search Games",
+    "searchSubtitle": "Find your next favorite game",
+    "searchPrompt": "Start typing to search for games...",
+    "searchHint": "Search by title, genre, or description"
+  },
+  "sidebar": {
+    "footer": {
+      "blogs": "Blogs",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "privacyPolicy": "Privacy Policy",
+      "disclaimer": "Disclaimer"
+    }
+  },
+  "home": {
+    "title": "Welcome to Spelle.nl",
+    "subtitle": "Your ultimate game directory",
+    "description": "Discover the best games across all platforms",
+    "gamesCount": "3000+ games",
+    "allFree": "All for free",
+    "noInstallation": "No installation",
+    "playWithFriends": "Play with friends",
+    "featuredGames": "Featured Games",
+    "featuredGamesSubtitle": "Discover the most popular games"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noResults": "No results found",
+    "viewMore": "View More",
+    "readMore": "Read More"
+  },
+  "games": {
+    "latest": "Latest Games",
+    "popular": "Popular Games",
+    "trending": "Trending Games",
+    "allGames": "All Games"
+  },
+  "categories": {
+    "title": "Game Categories",
+    "allCategories": "All Categories",
+    "action": "Action",
+    "adventure": "Adventure",
+    "puzzle": "Puzzle",
+    "strategy": "Strategy",
+    "racing": "Racing",
+    "rpg": "RPG",
+    "simulation": "Simulation",
+    "sports": "Sports",
+    "fighting": "Fighting",
+    "shooter": "Shooter",
+    "platformer": "Platformer",
+    "stealth": "Stealth",
+    "horror": "Horror",
+    "comedy": "Comedy",
+    "educational": "Educational",
+    "music": "Music",
+    "dance": "Dance",
+    "fitness": "Fitness",
+    "cooking": "Cooking",
+    "art": "Art",
+    "photography": "Photography",
+    "travel": "Travel",
+    "nature": "Nature",
+    "space": "Space",
+    "fantasy": "Fantasy",
+    "sciFi": "Sci-Fi",
+    "historical": "Historical",
+    "medieval": "Medieval",
+    "modern": "Modern",
+    "futuristic": "Futuristic"
+  }
+} 
