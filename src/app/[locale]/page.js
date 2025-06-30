@@ -815,7 +815,7 @@ export default function Home({ params }) {
               </div>
               <Link 
                 href={`/${locale}/categories/most-popular-this-week`}
-                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
                 {t('home.seeAll', 'See All')}
               </Link>
@@ -864,7 +864,7 @@ export default function Home({ params }) {
               </div>
               <Link 
                 href={`/${locale}/categories/latest-games`}
-                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
                 {t('home.seeAll', 'See All')}
               </Link>
@@ -913,7 +913,7 @@ export default function Home({ params }) {
               </div>
               <Link 
                 href={`/${locale}/categories/action`}
-                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
                 {t('home.seeAll', 'See All')}
               </Link>
@@ -962,7 +962,7 @@ export default function Home({ params }) {
               </div>
               <Link 
                 href={`/${locale}/categories/strategy`}
-                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
                 {t('home.seeAll', 'See All')}
               </Link>
@@ -1019,7 +1019,7 @@ export default function Home({ params }) {
               </div>
               <Link 
                 href={`/${locale}/categories`}
-                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
                 {t('home.seeAll', 'See All')}
               </Link>
@@ -1072,7 +1072,7 @@ export default function Home({ params }) {
               </div>
               <Link 
                 href={`/${locale}/blogs`}
-                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
                 {t('home.seeAll', 'See All')}
               </Link>

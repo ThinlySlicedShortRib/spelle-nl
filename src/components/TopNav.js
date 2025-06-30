@@ -33,7 +33,7 @@ export default function TopNav({ isSidebarOpen, setSidebarOpen, locale = 'en' })
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ease-in-out ${isSearchFocused ? 'h-screen bg-[#0a0e1a]/95 backdrop-blur-sm' : 'h-16 bg-gradient-to-r from-[#4457AD] to-[#25204E]'} shadow-lg`}>
-        <div className={`flex items-center justify-between h-16 px-3 sm:px-6 ${isSearchFocused ? 'border-b border-gray-500' : ''}`}>
+        <div className={`flex items-center justify-between h-16 px-3 ${isSearchFocused ? 'border-b border-gray-500' : ''}`}>
           <div className="flex items-center space-x-4">
             {!isSearchFocused && (
               <button 

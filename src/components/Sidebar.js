@@ -59,14 +59,14 @@ export default function Sidebar({ isSidebarOpen, setSidebarOpen, locale = 'en' }
         />
       )}
       
-      <aside className={`fixed top-16 left-0 flex h-screen flex-col border-r border-gray-500 bg-[var(--brand-background)] transition-all duration-300 ease-in-out z-50 ${
+      <aside className={`fixed top-16 left-0 flex h-screen flex-col border-r border-gray-800 bg-[var(--brand-background)] transition-all duration-300 ease-in-out z-50 ${
         isSidebarOpen 
           ? 'w-[250px]' 
-          : 'w-0 lg:w-[6rem]'
+          : 'w-0 lg:w-[4rem]'
       } ${
         isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       } overflow-hidden`}>
-        <div className={`h-[calc(100vh-4rem-12rem)] p-6 pb-32 overflow-auto ${isSidebarOpen ? 'block' : 'hidden lg:block'}`}>
+        <div className={`h-[calc(100vh-4rem-12rem)] p-3 pb-32 overflow-auto ${isSidebarOpen ? 'block' : 'hidden lg:block'}`}>
           <nav>
             <div className="flex flex-col gap-y-4">
               <div>
@@ -114,7 +114,7 @@ export default function Sidebar({ isSidebarOpen, setSidebarOpen, locale = 'en' }
         
         {/* Footer Links */}
         {isSidebarOpen && (
-          <div className={`h-64 p-6 border-t border-gray-500 bg-[var(--brand-background)] ${isSidebarOpen ? 'block' : 'hidden lg:block'}`}>
+          <div className={`h-80 p-3 border-t border-gray-800 bg-[var(--brand-background)]`}>
             <div className="flex flex-col">
               <Link href={`/${locale}/blogs`} className={`text-md transition-colors hover:text-[var(--brand-active)] p-2 hover:bg-white/10 rounded-lg ${isActive(`/${locale}/blogs`) ? 'text-[var(--brand-active)]' : 'text-gray-500'}`}>
                 {t('sidebar.footer.blogs', 'Blogs')}

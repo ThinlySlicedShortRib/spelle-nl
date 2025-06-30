@@ -13,7 +13,7 @@ const rubik = Rubik({
 });
 
 export default function LocaleLayout({ children, params }) {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const { locale } = use(params);
 
   // Handle responsive behavior
@@ -28,19 +28,12 @@ export default function LocaleLayout({ children, params }) {
         
         if (width < 1280) {
           setSidebarOpen(false);
-        } else if (width >= 1280) {
-          setSidebarOpen(true);
         }
       }, 100);
     };
 
-    // Set initial state based on screen size (only once)
-    const width = window.innerWidth;
-    if (width < 1280) {
-      setSidebarOpen(false);
-    } else if (width >= 1280) {
-      setSidebarOpen(true);
-    }
+    // Set initial state - always closed by default
+    setSidebarOpen(false);
 
     // Add event listener for resize events only
     window.addEventListener('resize', handleResize);
