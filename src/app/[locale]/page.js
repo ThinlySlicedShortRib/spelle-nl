@@ -206,106 +206,762 @@ const top10Games = [
   }
 ];
 
+// Mock most popular this week games data
+const mostPopularThisWeek = [
+  {
+    id: 201,
+    title: "Fortnite Battle Royale",
+    slug: "fortnite-battle-royale",
+    image: "/img-placeholder.svg",
+    rating: 4.8,
+    genre: "Battle Royale"
+  },
+  {
+    id: 202,
+    title: "Minecraft Survival",
+    slug: "minecraft-survival",
+    image: "/img-placeholder.svg",
+    rating: 4.9,
+    genre: "Sandbox"
+  },
+  {
+    id: 203,
+    title: "Among Us",
+    slug: "among-us",
+    image: "/img-placeholder.svg",
+    rating: 4.7,
+    genre: "Social Deduction"
+  },
+  {
+    id: 204,
+    title: "Fall Guys",
+    slug: "fall-guys",
+    image: "/img-placeholder.svg",
+    rating: 4.6,
+    genre: "Party"
+  },
+  {
+    id: 205,
+    title: "Valorant",
+    slug: "valorant",
+    image: "/img-placeholder.svg",
+    rating: 4.5,
+    genre: "FPS"
+  },
+  {
+    id: 206,
+    title: "Genshin Impact",
+    slug: "genshin-impact",
+    image: "/img-placeholder.svg",
+    rating: 4.4,
+    genre: "RPG"
+  },
+  {
+    id: 207,
+    title: "Rocket League",
+    slug: "rocket-league",
+    image: "/img-placeholder.svg",
+    rating: 4.3,
+    genre: "Sports"
+  },
+  {
+    id: 208,
+    title: "Apex Legends",
+    slug: "apex-legends",
+    image: "/img-placeholder.svg",
+    rating: 4.2,
+    genre: "Battle Royale"
+  },
+  {
+    id: 209,
+    title: "League of Legends",
+    slug: "league-of-legends",
+    image: "/img-placeholder.svg",
+    rating: 4.1,
+    genre: "MOBA"
+  },
+  {
+    id: 210,
+    title: "Call of Duty Warzone",
+    slug: "call-of-duty-warzone",
+    image: "/img-placeholder.svg",
+    rating: 4.0,
+    genre: "Battle Royale"
+  }
+];
+
+// Mock latest games data
+const latestGames = [
+  {
+    id: 301,
+    title: "Cyberpunk 2077: Phantom Liberty",
+    slug: "cyberpunk-2077-phantom-liberty",
+    image: "/img-placeholder.svg",
+    rating: 4.7,
+    genre: "RPG"
+  },
+  {
+    id: 302,
+    title: "Baldur's Gate 3",
+    slug: "baldurs-gate-3",
+    image: "/img-placeholder.svg",
+    rating: 4.9,
+    genre: "RPG"
+  },
+  {
+    id: 303,
+    title: "Starfield",
+    slug: "starfield",
+    image: "/img-placeholder.svg",
+    rating: 4.6,
+    genre: "Sci-Fi"
+  },
+  {
+    id: 304,
+    title: "Mortal Kombat 1",
+    slug: "mortal-kombat-1",
+    image: "/img-placeholder.svg",
+    rating: 4.5,
+    genre: "Fighting"
+  },
+  {
+    id: 305,
+    title: "Spider-Man 2",
+    slug: "spider-man-2",
+    image: "/img-placeholder.svg",
+    rating: 4.8,
+    genre: "Action"
+  },
+  {
+    id: 306,
+    title: "Alan Wake 2",
+    slug: "alan-wake-2",
+    image: "/img-placeholder.svg",
+    rating: 4.4,
+    genre: "Horror"
+  },
+  {
+    id: 307,
+    title: "Super Mario Bros Wonder",
+    slug: "super-mario-bros-wonder",
+    image: "/img-placeholder.svg",
+    rating: 4.7,
+    genre: "Platformer"
+  },
+  {
+    id: 308,
+    title: "Assassin's Creed Mirage",
+    slug: "assassins-creed-mirage",
+    image: "/img-placeholder.svg",
+    rating: 4.3,
+    genre: "Action"
+  },
+  {
+    id: 309,
+    title: "Final Fantasy XVI",
+    slug: "final-fantasy-xvi",
+    image: "/img-placeholder.svg",
+    rating: 4.6,
+    genre: "RPG"
+  },
+  {
+    id: 310,
+    title: "Street Fighter 6",
+    slug: "street-fighter-6",
+    image: "/img-placeholder.svg",
+    rating: 4.5,
+    genre: "Fighting"
+  }
+];
+
+// Mock action games data
+const actionGames = [
+  {
+    id: 401,
+    title: "Grand Theft Auto V",
+    slug: "grand-theft-auto-v",
+    image: "/img-placeholder.svg",
+    rating: 4.8,
+    genre: "Action"
+  },
+  {
+    id: 402,
+    title: "Red Dead Redemption 2",
+    slug: "red-dead-redemption-2",
+    image: "/img-placeholder.svg",
+    rating: 4.9,
+    genre: "Action"
+  },
+  {
+    id: 403,
+    title: "God of War Ragnarök",
+    slug: "god-of-war-ragnarok",
+    image: "/img-placeholder.svg",
+    rating: 4.7,
+    genre: "Action"
+  },
+  {
+    id: 404,
+    title: "Devil May Cry 5",
+    slug: "devil-may-cry-5",
+    image: "/img-placeholder.svg",
+    rating: 4.6,
+    genre: "Action"
+  },
+  {
+    id: 405,
+    title: "Bayonetta 3",
+    slug: "bayonetta-3",
+    image: "/img-placeholder.svg",
+    rating: 4.5,
+    genre: "Action"
+  },
+  {
+    id: 406,
+    title: "Metal Gear Solid V",
+    slug: "metal-gear-solid-v",
+    image: "/img-placeholder.svg",
+    rating: 4.4,
+    genre: "Action"
+  },
+  {
+    id: 407,
+    title: "Uncharted 4",
+    slug: "uncharted-4",
+    image: "/img-placeholder.svg",
+    rating: 4.3,
+    genre: "Action"
+  },
+  {
+    id: 408,
+    title: "Tomb Raider",
+    slug: "tomb-raider",
+    image: "/img-placeholder.svg",
+    rating: 4.2,
+    genre: "Action"
+  },
+  {
+    id: 409,
+    title: "Hitman 3",
+    slug: "hitman-3",
+    image: "/img-placeholder.svg",
+    rating: 4.1,
+    genre: "Action"
+  },
+  {
+    id: 410,
+    title: "Just Cause 4",
+    slug: "just-cause-4",
+    image: "/img-placeholder.svg",
+    rating: 4.0,
+    genre: "Action"
+  }
+];
+
+// Mock strategy games data
+const strategyGames = [
+  {
+    id: 501,
+    title: "Civilization VI",
+    slug: "civilization-vi",
+    image: "/img-placeholder.svg",
+    rating: 4.8,
+    genre: "Strategy"
+  },
+  {
+    id: 502,
+    title: "Total War: Warhammer III",
+    slug: "total-war-warhammer-iii",
+    image: "/img-placeholder.svg",
+    rating: 4.7,
+    genre: "Strategy"
+  },
+  {
+    id: 503,
+    title: "Europa Universalis IV",
+    slug: "europa-universalis-iv",
+    image: "/img-placeholder.svg",
+    rating: 4.6,
+    genre: "Strategy"
+  },
+  {
+    id: 504,
+    title: "Crusader Kings III",
+    slug: "crusader-kings-iii",
+    image: "/img-placeholder.svg",
+    rating: 4.5,
+    genre: "Strategy"
+  },
+  {
+    id: 505,
+    title: "Age of Empires IV",
+    slug: "age-of-empires-iv",
+    image: "/img-placeholder.svg",
+    rating: 4.4,
+    genre: "Strategy"
+  },
+  {
+    id: 506,
+    title: "XCOM 2",
+    slug: "xcom-2",
+    image: "/img-placeholder.svg",
+    rating: 4.3,
+    genre: "Strategy"
+  },
+  {
+    id: 507,
+    title: "Stellaris",
+    slug: "stellaris",
+    image: "/img-placeholder.svg",
+    rating: 4.2,
+    genre: "Strategy"
+  },
+  {
+    id: 508,
+    title: "Hearts of Iron IV",
+    slug: "hearts-of-iron-iv",
+    image: "/img-placeholder.svg",
+    rating: 4.1,
+    genre: "Strategy"
+  },
+  {
+    id: 509,
+    title: "Company of Heroes 3",
+    slug: "company-of-heroes-3",
+    image: "/img-placeholder.svg",
+    rating: 4.0,
+    genre: "Strategy"
+  },
+  {
+    id: 510,
+    title: "Warcraft III",
+    slug: "warcraft-iii",
+    image: "/img-placeholder.svg",
+    rating: 3.9,
+    genre: "Strategy"
+  }
+];
+
+// Mock categories data
+const categories = [
+  {
+    id: 1,
+    title: "Action",
+    slug: "action",
+    icon: "/005-boxing-gloves.svg",
+    gameCount: 1250
+  },
+  {
+    id: 2,
+    title: "Adventure",
+    slug: "adventure",
+    icon: "/006-compass.svg",
+    gameCount: 890
+  },
+  {
+    id: 3,
+    title: "Strategy",
+    slug: "strategy",
+    icon: "/strategy.svg",
+    gameCount: 650
+  },
+  {
+    id: 4,
+    title: "RPG",
+    slug: "rpg",
+    icon: "/role-model.svg",
+    gameCount: 720
+  },
+  {
+    id: 5,
+    title: "Sports",
+    slug: "sports",
+    icon: "/sports.svg",
+    gameCount: 450
+  },
+  {
+    id: 6,
+    title: "Puzzle",
+    slug: "puzzle",
+    icon: "/puzzle.svg",
+    gameCount: 380
+  },
+  {
+    id: 7,
+    title: "Racing",
+    slug: "racing",
+    icon: "/racing-car.svg",
+    gameCount: 320
+  },
+  {
+    id: 8,
+    title: "Horror",
+    slug: "horror",
+    icon: "/horror.svg",
+    gameCount: 280
+  }
+];
+
 export default function Home({ params }) {
   const { locale } = use(params);
   const { t } = useTranslations(locale);
 
   return (
-    <div className="relative -mx-4 -mt-4">
-      {/* Hero Background */}
-      <div className="absolute inset-0 opacity-20">
-        <Image
-          src="/hero-bg.png"
-          alt="Hero Background"
-          fill
-          className="object-cover"
-          priority
-        />
+    <div>
+      {/* Hero and Featured Games Section with Background */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="/hero-bg.png"
+            alt="Hero Background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-2 z-10 p-10">
+          <div>
+            <div className="flex flex-col items-center lg:items-start mb-6">
+              <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg">
+                <Image 
+                  src="/logo.png" 
+                  alt="Spelle.nl Logo" 
+                  width={128} 
+                  height={128}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h1 className="text-4xl font-bold text-center lg:text-left">{t('home.title', 'Welcome to Spelle.nl')}</h1>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-4">
+            <div className="bg-[#29285C] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
+              <Image src="/007-game-controller.svg" alt="Home" width={36} height={36} />
+              <p className="text-secondary text-md">{t('home.gamesCount', '3000+ games')}</p>
+            </div>
+            <div className="bg-[#1E1D4B] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
+              <Image src="/008-free.svg" alt="Home" width={36} height={36} />
+              <p className="text-secondary text-md">{t('home.allFree', 'All for free')}</p>
+            </div>
+            <div className="bg-[#44437C] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
+              <Image src="/009-fast-time.svg" alt="Home" width={36} height={36} />
+              <p className="text-secondary text-md">{t('home.noInstallation', 'No installation')}</p>
+            </div>
+            <div className="bg-[#282848] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
+              <Image src="/010-friendship.svg" alt="Home" width={36} height={36} />
+              <p className="text-secondary text-md">{t('home.playWithFriends', 'Play with friends')}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Featured Games Section */}
+        <div className="relative z-10 px-10 pb-10">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.featuredGames', 'Featured Games')}</h2>
+            <p className="text-gray-400">{t('home.featuredGamesSubtitle', 'Discover the most popular games')}</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredGames.map((game, index) => (
+              <GameCard 
+                key={game.id}
+                game={game}
+                index={index}
+                isFeatured={true}
+                locale={locale}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* Hero Content */}
-      <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-2 z-10 p-10">
-        <div>
-          <h1 className="text-2xl">{t('home.title', 'Welcome to Spelle.nl')}</h1>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-4">
-          <div className="bg-[#29285C] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
-            <Image src="/007-game-controller.svg" alt="Home" width={36} height={36} />
-            <p className="text-secondary text-md">{t('home.gamesCount', '3000+ games')}</p>
-          </div>
-          <div className="bg-[#1E1D4B] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
-            <Image src="/008-free.svg" alt="Home" width={36} height={36} />
-            <p className="text-secondary text-md">{t('home.allFree', 'All for free')}</p>
-          </div>
-          <div className="bg-[#44437C] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
-            <Image src="/009-fast-time.svg" alt="Home" width={36} height={36} />
-            <p className="text-secondary text-md">{t('home.noInstallation', 'No installation')}</p>
-          </div>
-          <div className="bg-[#282848] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
-            <Image src="/010-friendship.svg" alt="Home" width={36} height={36} />
-            <p className="text-secondary text-md">{t('home.playWithFriends', 'Play with friends')}</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Featured Games Section */}
-      <div className="relative z-10 px-10 pb-10">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-white mb-2">{t('home.featuredGames', 'Featured Games')}</h2>
-          <p className="text-gray-400">{t('home.featuredGamesSubtitle', 'Discover the most popular games')}</p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredGames.map((game, index) => (
-            <GameCard 
-              key={game.id}
-              game={game}
-              index={index}
-              isFeatured={true}
-              locale={locale}
-            />
-          ))}
-        </div>
-      </div>
       <AdBanner showPlaceholder={true} className="text-center" />
-      {/* Top 10 Games Section */}
-      <div className="relative z-10 px-10 pb-10">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-white mb-2">{t('home.top10Games', 'Top 10 Games of All Time')}</h2>
-          <p className="text-gray-400">{t('home.top10GamesSubtitle', 'The most legendary games ever created')}</p>
+      
+      {/* Remaining sections with continuous gradient background */}
+      <div className="bg-gradient-to-br from-[var(--brand-background)] via-[#121252] to-[[var(--brand-background)]">
+        {/* Top 10 Games Section */}
+        <div className="px-10 pt-10 pb-10">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.top10Games', 'Top 10 Games of All Time')}</h2>
+            <p className="text-gray-400">{t('home.top10GamesSubtitle', 'The most legendary games ever created')}</p>
+          </div>
+          
+          <div className="relative overflow-hidden w-full">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                slidesToScroll: 1,
+              }}
+              className="max-w-[calc(100vw-5rem)]"
+            >
+              <CarouselContent className="">
+                {top10Games.map((game, index) => (
+                  <CarouselItem key={game.id} className="pt-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <GameCard 
+                      game={game}
+                      index={index}
+                      isTop10={true}
+                      locale={locale}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-gray-700 border-[var(--brand-background)] text-white left-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Previous" width={20} height={20} className="rotate-180" unoptimized />
+              </CarouselPrevious>
+              <CarouselNext className="bg-gray-700 border-[var(--brand-background)] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Next" width={20} height={20} unoptimized />
+              </CarouselNext>
+            </Carousel>
+          </div>
         </div>
+        <AdBanner showPlaceholder={true} className="text-center" />
         
-        <div className="relative overflow-hidden w-full">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-              slidesToScroll: 1,
-            }}
-            className="max-w-[calc(100vw-5rem)]"
-          >
-            <CarouselContent className="">
-              {top10Games.map((game, index) => (
-                <CarouselItem key={game.id} className="pt-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <GameCard 
-                    game={game}
-                    index={index}
-                    isTop10={true}
-                    locale={locale}
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="bg-gray-700 border-[var(--brand-background)] text-white left-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
-              <Image src="/arrow-forward.svg" alt="Previous" width={20} height={20} className="rotate-180" unoptimized />
-            </CarouselPrevious>
-            <CarouselNext className="bg-gray-700 border-[var(--brand-background)] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
-              <Image src="/arrow-forward.svg" alt="Next" width={20} height={20} unoptimized />
-            </CarouselNext>
-          </Carousel>
+        {/* Most Popular This Week Section */}
+        <div className="px-10 pb-10">
+          <div className="mb-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+              <div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.mostPopularThisWeek', 'Most Popular This Week')}</h2>
+                <p className="text-gray-400">{t('home.mostPopularThisWeekSubtitle', 'Trending games this week')}</p>
+              </div>
+              <Link 
+                href={`/${locale}/categories/most-popular-this-week`}
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+              >
+                {t('home.seeAll', 'See All')}
+              </Link>
+            </div>
+          </div>
+          
+          <div className="relative overflow-hidden w-full">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                slidesToScroll: 1,
+              }}
+              className="max-w-[calc(100vw-5rem)]"
+            >
+              <CarouselContent className="">
+                {mostPopularThisWeek.map((game, index) => (
+                  <CarouselItem key={game.id} className="pt-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <GameCard 
+                      game={game}
+                      index={index}
+                      isPopular={true}
+                      locale={locale}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-gray-700 border-[var(--brand-background)] text-white left-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Previous" width={20} height={20} className="rotate-180" unoptimized />
+              </CarouselPrevious>
+              <CarouselNext className="bg-gray-700 border-[var(--brand-background)] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Next" width={20} height={20} unoptimized />
+              </CarouselNext>
+            </Carousel>
+          </div>
         </div>
+        <AdBanner showPlaceholder={true} className="text-center" />
+        
+        {/* Latest Games Section */}
+        <div className="px-10 pb-10">
+          <div className="mb-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+              <div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.latestGames', 'Latest Games')}</h2>
+                <p className="text-gray-400">{t('home.latestGamesSubtitle', 'New games released recently')}</p>
+              </div>
+              <Link 
+                href={`/${locale}/categories/latest-games`}
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+              >
+                {t('home.seeAll', 'See All')}
+              </Link>
+            </div>
+          </div>
+          
+          <div className="relative overflow-hidden w-full">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                slidesToScroll: 1,
+              }}
+              className="max-w-[calc(100vw-5rem)]"
+            >
+              <CarouselContent className="">
+                {latestGames.map((game, index) => (
+                  <CarouselItem key={game.id} className="pt-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <GameCard 
+                      game={game}
+                      index={index}
+                      isLatest={true}
+                      locale={locale}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-gray-700 border-[var(--brand-background)] text-white left-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Previous" width={20} height={20} className="rotate-180" unoptimized />
+              </CarouselPrevious>
+              <CarouselNext className="bg-gray-700 border-[var(--brand-background)] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Next" width={20} height={20} unoptimized />
+              </CarouselNext>
+            </Carousel>
+          </div>
+        </div>
+        <AdBanner showPlaceholder={true} className="text-center" />
+        
+        {/* Action Games Section */}
+        <div className="px-10 pb-10">
+          <div className="mb-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+              <div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.actionGames', 'Action Games')}</h2>
+                <p className="text-gray-400">{t('home.actionGamesSubtitle', 'High-octane action and adventure')}</p>
+              </div>
+              <Link 
+                href={`/${locale}/categories/action`}
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+              >
+                {t('home.seeAll', 'See All')}
+              </Link>
+            </div>
+          </div>
+          
+          <div className="relative overflow-hidden w-full">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                slidesToScroll: 1,
+              }}
+              className="max-w-[calc(100vw-5rem)]"
+            >
+              <CarouselContent className="">
+                {actionGames.map((game, index) => (
+                  <CarouselItem key={game.id} className="pt-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <GameCard 
+                      game={game}
+                      index={index}
+                      isAction={true}
+                      locale={locale}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-gray-700 border-[var(--brand-background)] text-white left-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Previous" width={20} height={20} className="rotate-180" unoptimized />
+              </CarouselPrevious>
+              <CarouselNext className="bg-gray-700 border-[var(--brand-background)] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Next" width={20} height={20} unoptimized />
+              </CarouselNext>
+            </Carousel>
+          </div>
+        </div>
+        <AdBanner showPlaceholder={true} className="text-center" />
+        
+        {/* Strategy Games Section */}
+        <div className="px-10 pb-10">
+          <div className="mb-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+              <div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.strategyGames', 'Strategy Games')}</h2>
+                <p className="text-gray-400">{t('home.strategyGamesSubtitle', 'Think, plan, and conquer')}</p>
+              </div>
+              <Link 
+                href={`/${locale}/categories/strategy`}
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+              >
+                {t('home.seeAll', 'See All')}
+              </Link>
+            </div>
+          </div>
+          
+          <div className="relative overflow-hidden w-full">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                slidesToScroll: 1,
+              }}
+              className="max-w-[calc(100vw-5rem)]"
+            >
+              <CarouselContent className="">
+                {strategyGames.map((game, index) => (
+                  <CarouselItem key={game.id} className="pt-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <GameCard 
+                      game={game}
+                      index={index}
+                      isStrategy={true}
+                      locale={locale}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-gray-700 border-[var(--brand-background)] text-white left-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Previous" width={20} height={20} className="rotate-180" unoptimized />
+              </CarouselPrevious>
+              <CarouselNext className="bg-gray-700 border-[#3B3859] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Next" width={20} height={20} unoptimized />
+              </CarouselNext>
+            </Carousel>
+          </div>
+        </div>
+        <AdBanner showPlaceholder={true} className="text-center" />
+        
+        {/* Categories Section */}
+        <div className="px-10 pb-10">
+          <div className="mb-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+              <div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.categories', 'Game Categories')}</h2>
+                <p className="text-gray-400">{t('home.categoriesSubtitle', 'Explore games by category')}</p>
+              </div>
+              <Link 
+                href={`/${locale}/categories`}
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+              >
+                {t('home.seeAll', 'See All')}
+              </Link>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {categories.map((category) => (
+              <Link
+                key={category.id}
+                href={`/${locale}/categories/${category.slug}`}
+                className="bg-gray-700 hover:bg-[#29285C] rounded-lg p-6 transition-all duration-200 group"
+              >
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    <Image 
+                      src={category.icon} 
+                      alt={category.title} 
+                      width={48} 
+                      height={48}
+                      className="group-hover:scale-110 transition-transform duration-200"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-lg">{category.title}</h3>
+                    <p className="text-gray-400 text-sm">{category.gameCount} games</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <AdBanner showPlaceholder={true} className="text-center" />
       </div>
-      <AdBanner showPlaceholder={true} className="text-center" />
       
     </div>
   );

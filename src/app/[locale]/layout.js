@@ -66,7 +66,7 @@ export default function LocaleLayout({ children, params }) {
         <TopNav isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} locale={locale} />
         <div className="flex">
           <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} locale={locale} />
-          <main className={`flex-grow p-4 transition-all duration-300 ease-in-out mt-16 ${
+          <main className={`flex-grow transition-all duration-300 ease-in-out mt-16 ${
             isSidebarOpen 
               ? 'lg:ml-[250px]' 
               : 'lg:ml-[6rem]'

@@ -49,7 +49,18 @@ export default function TopNav({ isSidebarOpen, setSidebarOpen, locale = 'en' })
                 />
               </button>
             )}
-            <p className={`text-white text-md lg:text-xl font-semibold ${isSearchFocused ? 'lg:block hidden' : 'block'}`}>Spelle NL</p>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full overflow-hidden">
+                <Image 
+                  src="/logo-cropped.png" 
+                  alt="Spelle.nl Logo" 
+                  width={32} 
+                  height={32}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className={`text-white text-md lg:text-xl font-regular ${isSearchFocused ? 'lg:block hidden' : 'block'}`}>Spelle.nl</p>
+            </div>
           </div>
           
           {/* Simple Search Input */}
