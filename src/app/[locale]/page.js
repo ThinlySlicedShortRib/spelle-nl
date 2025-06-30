@@ -602,6 +602,90 @@ const categories = [
   }
 ];
 
+// Mock blogs data
+const blogs = [
+  {
+    id: 601,
+    title: "Top 10 Must-Play Games of 2024",
+    slug: "top-10-must-play-games-2024",
+    image: "/img-placeholder.svg",
+    excerpt: "Discover the most exciting games that are taking the gaming world by storm this year.",
+    author: "Gaming Expert",
+    date: "2024-01-15",
+    readTime: "5 min read"
+  },
+  {
+    id: 602,
+    title: "The Evolution of Mobile Gaming",
+    slug: "evolution-of-mobile-gaming",
+    image: "/img-placeholder.svg",
+    excerpt: "How mobile games have transformed from simple puzzles to complex multiplayer experiences.",
+    author: "Tech Writer",
+    date: "2024-01-12",
+    readTime: "8 min read"
+  },
+  {
+    id: 603,
+    title: "Best Strategy Games for Beginners",
+    slug: "best-strategy-games-beginners",
+    image: "/img-placeholder.svg",
+    excerpt: "Perfect entry points for newcomers to the strategy genre.",
+    author: "Strategy Guru",
+    date: "2024-01-10",
+    readTime: "6 min read"
+  },
+  {
+    id: 604,
+    title: "Gaming Trends to Watch in 2024",
+    slug: "gaming-trends-2024",
+    image: "/img-placeholder.svg",
+    excerpt: "From AI integration to cloud gaming, here's what's shaping the future of gaming.",
+    author: "Industry Analyst",
+    date: "2024-01-08",
+    readTime: "7 min read"
+  },
+  {
+    id: 605,
+    title: "How to Build the Perfect Gaming Setup",
+    slug: "perfect-gaming-setup",
+    image: "/img-placeholder.svg",
+    excerpt: "Essential tips and recommendations for creating an optimal gaming environment.",
+    author: "Setup Specialist",
+    date: "2024-01-05",
+    readTime: "10 min read"
+  },
+  {
+    id: 606,
+    title: "The Psychology Behind Addictive Games",
+    slug: "psychology-addictive-games",
+    image: "/img-placeholder.svg",
+    excerpt: "Understanding what makes certain games so compelling and engaging.",
+    author: "Psychologist",
+    date: "2024-01-03",
+    readTime: "9 min read"
+  },
+  {
+    id: 607,
+    title: "Indie Games That Deserve Your Attention",
+    slug: "indie-games-attention",
+    image: "/img-placeholder.svg",
+    excerpt: "Hidden gems from independent developers that are worth playing.",
+    author: "Indie Enthusiast",
+    date: "2024-01-01",
+    readTime: "6 min read"
+  },
+  {
+    id: 608,
+    title: "Gaming and Mental Health: A Positive Connection",
+    slug: "gaming-mental-health",
+    image: "/img-placeholder.svg",
+    excerpt: "How video games can actually benefit your mental well-being when played mindfully.",
+    author: "Health Expert",
+    date: "2023-12-28",
+    readTime: "8 min read"
+  }
+];
+
 export default function Home({ params }) {
   const { locale } = use(params);
   const { t } = useTranslations(locale);
@@ -660,7 +744,7 @@ export default function Home({ params }) {
         {/* Featured Games Section */}
         <div className="relative z-10 px-10 pb-10">
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.featuredGames', 'Featured Games')}</h2>
+            <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.featuredGames', 'Featured Games')}</h2>
             <p className="text-gray-400">{t('home.featuredGamesSubtitle', 'Discover the most popular games')}</p>
           </div>
           
@@ -685,7 +769,7 @@ export default function Home({ params }) {
         {/* Top 10 Games Section */}
         <div className="px-10 pt-10 pb-10">
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.top10Games', 'Top 10 Games of All Time')}</h2>
+            <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.top10Games', 'Top 10 Games of All Time')}</h2>
             <p className="text-gray-400">{t('home.top10GamesSubtitle', 'The most legendary games ever created')}</p>
           </div>
           
@@ -726,7 +810,7 @@ export default function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.mostPopularThisWeek', 'Most Popular This Week')}</h2>
+                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.mostPopularThisWeek', 'Most Popular This Week')}</h2>
                 <p className="text-gray-400">{t('home.mostPopularThisWeekSubtitle', 'Trending games this week')}</p>
               </div>
               <Link 
@@ -775,7 +859,7 @@ export default function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.latestGames', 'Latest Games')}</h2>
+                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.latestGames', 'Latest Games')}</h2>
                 <p className="text-gray-400">{t('home.latestGamesSubtitle', 'New games released recently')}</p>
               </div>
               <Link 
@@ -824,7 +908,7 @@ export default function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.actionGames', 'Action Games')}</h2>
+                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.actionGames', 'Action Games')}</h2>
                 <p className="text-gray-400">{t('home.actionGamesSubtitle', 'High-octane action and adventure')}</p>
               </div>
               <Link 
@@ -873,7 +957,7 @@ export default function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.strategyGames', 'Strategy Games')}</h2>
+                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.strategyGames', 'Strategy Games')}</h2>
                 <p className="text-gray-400">{t('home.strategyGamesSubtitle', 'Think, plan, and conquer')}</p>
               </div>
               <Link 
@@ -922,7 +1006,15 @@ export default function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-2xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.categories', 'Game Categories')}</h2>
+                <div className="flex items-center gap-3 mb-2">
+                  <Image 
+                    src="/003-application.svg" 
+                    alt="Categories" 
+                    width={48} 
+                    height={48}
+                  />
+                  <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent">{t('home.categories', 'Game Categories')}</h2>
+                </div>
                 <p className="text-gray-400">{t('home.categoriesSubtitle', 'Explore games by category')}</p>
               </div>
               <Link 
@@ -958,6 +1050,82 @@ export default function Home({ params }) {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+        <AdBanner showPlaceholder={true} className="text-center" />
+        
+        {/* Blogs Section */}
+        <div className="px-10 pb-10">
+          <div className="mb-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <Image 
+                    src="/004-blogging.svg" 
+                    alt="Blogs" 
+                    width={48} 
+                    height={48}
+                  />
+                  <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent">{t('home.blogs', 'Gaming Blog')}</h2>
+                </div>
+                <p className="text-gray-400">{t('home.blogsSubtitle', 'Latest insights and gaming news')}</p>
+              </div>
+              <Link 
+                href={`/${locale}/blogs`}
+                className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-lg transition-colors duration-200 text-md font-medium self-start sm:self-auto"
+              >
+                {t('home.seeAll', 'See All')}
+              </Link>
+            </div>
+          </div>
+          
+          <div className="relative overflow-hidden w-full">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                slidesToScroll: 1,
+              }}
+              className="max-w-[calc(100vw-5rem)]"
+            >
+              <CarouselContent className="">
+                {blogs.map((blog, index) => (
+                  <CarouselItem key={blog.id} className="pt-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <Link
+                      href={`/${locale}/blogs/${blog.slug}`}
+                      className="block bg-gray-700 hover:bg-[#29285C] rounded-lg overflow-hidden transition-all duration-200 group"
+                    >
+                      <div className="aspect-video relative overflow-hidden">
+                        <Image 
+                          src={blog.image} 
+                          alt={blog.title} 
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-200"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-white font-semibold text-lg mb-2 line-clamp-2 group-hover:text-[var(--brand-active)] transition-colors">
+                          {blog.title}
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+                          {blog.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between text-xs text-gray-500">
+                          <span>{blog.author}</span>
+                          <span>{blog.readTime}</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-gray-700 border-[var(--brand-background)] text-white left-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Previous" width={20} height={20} className="rotate-180" unoptimized />
+              </CarouselPrevious>
+              <CarouselNext className="bg-gray-700 border-[var(--brand-background)] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+                <Image src="/arrow-forward.svg" alt="Next" width={20} height={20} unoptimized />
+              </CarouselNext>
+            </Carousel>
           </div>
         </div>
         <AdBanner showPlaceholder={true} className="text-center" />
