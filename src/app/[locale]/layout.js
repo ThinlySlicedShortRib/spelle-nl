@@ -63,7 +63,7 @@ export default function LocaleLayout({ children, params }) {
           <main className={`flex-grow transition-all duration-300 ease-in-out mt-16 ${
             isSidebarOpen 
               ? 'lg:ml-[250px]' 
-              : 'lg:ml-[6rem]'
+              : 'lg:ml-[4rem]'
           }`}>
             {children}
           </main>
