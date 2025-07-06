@@ -1,9 +1,6 @@
-'use client';
-
 import Image from "next/image";
 import Link from "next/link";
-import { use } from 'react';
-import { useTranslations } from '@/utils/translations';
+import { useTranslations, t } from '@/utils/translations';
 import AdBanner from '@/components/AdBanner';
 import GameCard from '@/components/GameCard';
 import {
@@ -13,6 +10,23 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
+// Metadata for SEO
+export async function generateMetadata({ params }) {
+  const { locale } = params;
+  
+  return {
+    title: t(locale, 'home.title', 'Welcome to Spelle.nl') + ' - Free Online Games',
+    description: t(locale, 'home.description', 'Play thousands of free online games at Spelle.nl. No downloads required. Action, strategy, puzzle, and more games available.'),
+    keywords: 'free online games, browser games, action games, strategy games, puzzle games, no download games',
+    openGraph: {
+      title: t(locale, 'home.title', 'Welcome to Spelle.nl') + ' - Free Online Games',
+      description: t(locale, 'home.description', 'Play thousands of free online games at Spelle.nl. No downloads required.'),
+      type: 'website',
+      locale: locale,
+    },
+  };
+}
 
 // Mock featured games data
 const featuredGames = [
@@ -687,7 +701,7 @@ const blogs = [
 ];
 
 export default function Home({ params }) {
-  const { locale } = use(params);
+  const { locale } = params;
   const { t } = useTranslations(locale);
 
   return (
@@ -762,7 +776,9 @@ export default function Home({ params }) {
         </div>
       </div>
 
-      <AdBanner showPlaceholder={true} className="text-center" />
+      <div className="flex justify-center">
+        <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
+      </div>
       
       {/* Remaining sections with continuous gradient background */}
       <div className="bg-gradient-to-br from-[var(--brand-background)] via-[#121252] to-[[var(--brand-background)]">
@@ -803,7 +819,9 @@ export default function Home({ params }) {
             </Carousel>
           </div>
         </div>
-        <AdBanner showPlaceholder={true} className="text-center" />
+        <div className="flex justify-center">
+          <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
+        </div>
         
         {/* Most Popular This Week Section */}
         <div className="px-10 pb-10">
@@ -852,7 +870,9 @@ export default function Home({ params }) {
             </Carousel>
           </div>
         </div>
-        <AdBanner showPlaceholder={true} className="text-center" />
+        <div className="flex justify-center">
+          <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
+        </div>
         
         {/* Latest Games Section */}
         <div className="px-10 pb-10">
@@ -901,7 +921,9 @@ export default function Home({ params }) {
             </Carousel>
           </div>
         </div>
-        <AdBanner showPlaceholder={true} className="text-center" />
+        <div className="flex justify-center">
+          <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
+        </div>
         
         {/* Action Games Section */}
         <div className="px-10 pb-10">
@@ -950,7 +972,9 @@ export default function Home({ params }) {
             </Carousel>
           </div>
         </div>
-        <AdBanner showPlaceholder={true} className="text-center" />
+        <div className="flex justify-center">
+          <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
+        </div>
         
         {/* Strategy Games Section */}
         <div className="px-10 pb-10">
@@ -993,13 +1017,15 @@ export default function Home({ params }) {
               <CarouselPrevious className="bg-gray-700 border-[var(--brand-background)] text-white left-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
                 <Image src="/arrow-forward.svg" alt="Previous" width={20} height={20} className="rotate-180" unoptimized />
               </CarouselPrevious>
-              <CarouselNext className="bg-gray-700 border-[#3B3859] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
+              <CarouselNext className="bg-gray-700 border-[var(--brand-background)] text-white right-4 h-12 w-12 hover:bg-gray-600 hover:scale-110 transition-all duration-200">
                 <Image src="/arrow-forward.svg" alt="Next" width={20} height={20} unoptimized />
               </CarouselNext>
             </Carousel>
           </div>
         </div>
-        <AdBanner showPlaceholder={true} className="text-center" />
+        <div className="flex justify-center">
+          <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
+        </div>
         
         {/* Categories Section */}
         <div className="px-10 pb-10">
@@ -1052,7 +1078,9 @@ export default function Home({ params }) {
             ))}
           </div>
         </div>
-        <AdBanner showPlaceholder={true} className="text-center" />
+        <div className="flex justify-center">
+          <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
+        </div>
         
         {/* Blogs Section */}
         <div className="px-10 pb-10">
@@ -1128,9 +1156,11 @@ export default function Home({ params }) {
             </Carousel>
           </div>
         </div>
-        <AdBanner showPlaceholder={true} className="text-center" />
+        <div className="flex justify-center">
+          <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
+        </div>
       </div>
       
     </div>
   );
-} 
+}
