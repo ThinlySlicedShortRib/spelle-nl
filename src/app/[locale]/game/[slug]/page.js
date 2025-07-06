@@ -176,7 +176,7 @@ export default function GameDetailPage({ params }) {
                   hours of entertainment for players of all skill levels.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  Whether you're a casual gamer looking for quick fun or a dedicated player seeking a challenge,
+                  Whether you&apos;re a casual gamer looking for quick fun or a dedicated player seeking a challenge,
                   {game.title} delivers an exceptional gaming experience that will keep you coming back for more.
                 </p>
               </div>
