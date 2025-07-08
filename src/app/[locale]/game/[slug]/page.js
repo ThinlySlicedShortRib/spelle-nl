@@ -120,7 +120,7 @@ export default function GameDetailPage({ params }) {
         
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 mb-6">
           {/* Rate the game */}
-          <div className="flex flex-col gap-4 mx-auto lg: mx-0">
+          <div className="flex flex-col gap-4 mx-auto lg:mx-0">
 
             <div className="hidden md:block">
               <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
