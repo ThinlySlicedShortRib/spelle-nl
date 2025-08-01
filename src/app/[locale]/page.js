@@ -70,25 +70,25 @@ export default async function Home({ params }) {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h1 className="text-4xl font-bold text-center lg:text-left">{t('home.title', 'Welcome to Spelle.nl')}</h1>
+              <h1 className="text-4xl font-bold text-center lg:text-left">{t(locale, 'home.title', 'Welcome to Spelle.nl')}</h1>
             </div>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-4">
             <div className="bg-[#29285C] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
               <Image src="/007-game-controller.svg" alt="Home" width={36} height={36} />
-              <p className="text-secondary text-md">{t('home.gamesCount', '3000+ games')}</p>
+              <p className="text-white text-md">{t(locale, 'home.gamesCount', '3000+ games')}</p>
             </div>
             <div className="bg-[#1E1D4B] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
               <Image src="/008-free.svg" alt="Home" width={36} height={36} />
-              <p className="text-secondary text-md">{t('home.allFree', 'All for free')}</p>
+              <p className="text-white text-md">{t(locale, 'home.allFree', 'All for free')}</p>
             </div>
             <div className="bg-[#44437C] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
               <Image src="/009-fast-time.svg" alt="Home" width={36} height={36} />
-              <p className="text-secondary text-md">{t('home.noInstallation', 'No installation')}</p>
+              <p className="text-white text-md">{t(locale, 'home.noInstallation', 'No installation')}</p>
             </div>
             <div className="bg-[#282848] rounded-lg p-4 transition-colors flex flex-row items-center gap-4">
               <Image src="/010-friendship.svg" alt="Home" width={36} height={36} />
-              <p className="text-secondary text-md">{t('home.playWithFriends', 'Play with friends')}</p>
+              <p className="text-white text-md">{t(locale, 'home.playWithFriends', 'Play with friends')}</p>
             </div>
           </div>
         </div>
@@ -98,8 +98,8 @@ export default async function Home({ params }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 px-10 pb-10">
           <div className="mb-8">
-            <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.featuredGames', 'Featured Games')}</h2>
-            <p className="text-gray-400">{t('home.featuredGamesSubtitle', 'Discover the most popular games')}</p>
+            <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t(locale, 'home.featuredGames', 'Featured Games')}</h2>
+            <p className="text-gray-400">{t(locale, 'home.featuredGamesSubtitle', 'Discover the most popular games')}</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -126,8 +126,8 @@ export default async function Home({ params }) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="px-10 pt-10 pb-10">
           <div className="mb-8">
-            <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.top10Games', 'Top 10 Games of All Time')}</h2>
-            <p className="text-gray-400">{t('home.top10GamesSubtitle', 'The most legendary games ever created')}</p>
+            <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t(locale, 'home.top10Games', 'Top 10 Games of All Time')}</h2>
+            <p className="text-gray-400">{t(locale, 'home.top10GamesSubtitle', 'The most legendary games ever created')}</p>
           </div>
           
           <div className="relative overflow-hidden w-full">
