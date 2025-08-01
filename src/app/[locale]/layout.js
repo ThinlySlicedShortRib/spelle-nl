@@ -56,7 +56,7 @@ export default function LocaleLayout({ children, params }) {
       window.removeEventListener('resize', handleResize);
       clearTimeout(timeoutId);
     };
-  }, [isSidebarOpen]);
+  }, []);
 
   return (
     <html lang={locale}>

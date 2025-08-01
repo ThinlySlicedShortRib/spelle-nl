@@ -21,7 +21,7 @@ export default function SubCategoryPage({ params }) {
         ]
       });
       setIsLoading(false);
-    }, 5000); // 2 second delay to test progress bar
+    }, 1000); // 1 second delay to test progress bar
 
     return () => clearTimeout(timer);
   }, [params.slug]);

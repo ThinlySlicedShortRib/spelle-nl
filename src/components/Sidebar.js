@@ -82,10 +82,10 @@ export default function Sidebar({ isSidebarOpen, setSidebarOpen, locale = 'en' }
                   )}
                 </div>
                 {isSidebarOpen && isCategoryOpen && (
-                  <div className="flex flex-col gap-y-4 pl-10 mt-4 ml-4 border-l border-gray-500 mb-10">
+                  <div className="w-full flex flex-col gap-y-2 mt-4 ml-4 border-l border-gray-500 mb-10">
                     {categories.map((category) => (
-                      <div key={category.slug}>
-                        <Link href={`/${locale}/categories/${category.slug}`} className={`text-md transition-colors hover:text-[var(--brand-active)] p-2 hover:bg-white/10 rounded-lg ${isActive(`/${locale}/categories/${category.slug}`) ? 'active-link' : 'text-gray-400'}`}>
+                      <div key={category.slug} className="px-6 py-2">
+                        <Link href={`/${locale}/categories/${category.slug}`} className={`text-md transition-colors hover:text-[var(--brand-active)] p-2 hover:bg-white/10 rounded-lg w-full block ${isActive(`/${locale}/categories/${category.slug}`) ? 'active-link' : 'text-gray-200'}`}>
                           <div className="flex items-center">
                             <Image src={category.icon} alt={category.title} width={16} height={16} className="mr-2" />
                             {category.title}
