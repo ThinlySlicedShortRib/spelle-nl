@@ -1,14 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { useTranslations } from '@/utils/translations';
 import LanguageSwitcher from './LanguageSwitcher';
+import ProgressBar from './ProgressBar';
 import Image from 'next/image';
 
 export default function TopNav({ isSidebarOpen, setSidebarOpen, locale = 'en' }) {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isNavigating, setIsNavigating] = useState(false);
   const { t } = useTranslations(locale);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
 
@@ -30,8 +35,91 @@ export default function TopNav({ isSidebarOpen, setSidebarOpen, locale = 'en' })
     setSearchQuery('');
   };
 
+  // Navigation loading state
+  useEffect(() => {
+    const handleStart = () => {
+      setIsNavigating(true);
+      console.log('🚀 Navigation started');
+    };
+
+    const handleComplete = () => {
+      setIsNavigating(false);
+      console.log('✅ Navigation completed');
+    };
+
+    // Simulate navigation loading when pathname changes
+    const currentPath = pathname;
+    
+    // Set a timeout to simulate navigation completion
+    const timeoutId = setTimeout(() => {
+      handleComplete();
+    }, 500); // Show progress bar for 500ms
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [pathname]);
+
+  // Start navigation when pathname changes
+  useEffect(() => {
+    if (pathname) {
+      // Start navigation immediately
+      setIsNavigating(true);
+      console.log('🚀 Navigation started to:', pathname);
+      
+      // Don't auto-complete - let the ProgressBar handle completion
+      // The ProgressBar will call onComplete when it's done
+    }
+  }, [pathname]);
+
+  // Performance monitoring
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Monitor navigation performance
+      const observer = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.entryType === 'navigation') {
+            console.log('🚀 Navigation Performance:', {
+              type: entry.type,
+              duration: entry.duration + 'ms',
+              domContentLoaded: (entry.domContentLoadedEventEnd - entry.domContentLoadedEventStart) + 'ms',
+              loadComplete: (entry.loadEventEnd - entry.loadEventStart) + 'ms',
+              firstPaint: entry.firstPaint ? entry.firstPaint + 'ms' : 'N/A',
+              firstContentfulPaint: entry.firstContentfulPaint ? entry.firstContentfulPaint + 'ms' : 'N/A'
+            });
+          }
+        }
+      });
+      
+      observer.observe({ entryTypes: ['navigation'] });
+      
+      // Also log initial page load performance
+      const navigationStart = performance.getEntriesByType('navigation')[0];
+      if (navigationStart) {
+        console.log('📊 Initial Page Load Performance:', {
+          totalTime: navigationStart.loadEventEnd - navigationStart.fetchStart + 'ms',
+          domContentLoaded: navigationStart.domContentLoadedEventEnd - navigationStart.domContentLoadedEventStart + 'ms',
+          loadComplete: navigationStart.loadEventEnd - navigationStart.loadEventStart + 'ms'
+        });
+      }
+      
+      return () => observer.disconnect();
+    }
+  }, []);
+
+  const handleProgressComplete = () => {
+    setIsNavigating(false);
+    console.log('✅ Real progress completed');
+  };
+
   return (
     <>
+      {/* Real Progress Bar */}
+      <ProgressBar 
+        isVisible={isNavigating} 
+        onComplete={handleProgressComplete}
+      />
+      
       <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ease-in-out ${isSearchFocused ? 'h-screen bg-[#0a0e1a]/95 backdrop-blur-sm' : 'h-16 bg-gradient-to-r from-[#4457AD] to-[#25204E]'} shadow-lg`}>
         <div className={`flex items-center justify-between h-16 px-3 ${isSearchFocused ? 'border-b border-gray-500' : ''}`}>
           <div className="flex items-center space-x-4">
@@ -112,6 +200,7 @@ export default function TopNav({ isSidebarOpen, setSidebarOpen, locale = 'en' })
                 </svg>
               </button>
             )}
+            
             <LanguageSwitcher currentLocale={locale} />
           </div>
         </div>

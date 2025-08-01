@@ -167,3 +167,33 @@ a {
     @apply bg-background text-foreground;
   }
 }
+
+/* Loading animation for navigation progress bar */
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  20% {
+    width: 20%;
+  }
+  50% {
+    width: 60%;
+  }
+  80% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Active link styles */
+.active-link {
+  color: var(--brand-active) !important;
+  background-color: rgba(68, 87, 173, 0.1) !important;
+  border-left: 3px solid var(--brand-active) !important;
+}
+
+.active-link:hover {
+  background-color: rgba(68, 87, 173, 0.2) !important;
+}

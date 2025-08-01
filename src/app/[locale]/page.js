@@ -11,23 +11,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Metadata for SEO
-export async function generateMetadata({ params }) {
-  const { locale } = params;
-  
-  return {
-    title: t(locale, 'home.title', 'Welcome to Spelle.nl') + ' - Free Online Games',
-    description: t(locale, 'home.description', 'Play thousands of free online games at Spelle.nl. No downloads required. Action, strategy, puzzle, and more games available.'),
-    keywords: 'free online games, browser games, action games, strategy games, puzzle games, no download games',
-    openGraph: {
-      title: t(locale, 'home.title', 'Welcome to Spelle.nl') + ' - Free Online Games',
-      description: t(locale, 'home.description', 'Play thousands of free online games at Spelle.nl. No downloads required.'),
-      type: 'website',
-      locale: locale,
-    },
-  };
-}
-
 // Mock featured games data
 const featuredGames = [
   {
@@ -700,26 +683,42 @@ const blogs = [
   }
 ];
 
-export default function Home({ params }) {
-  const { locale } = params;
+// Metadata for SEO
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  
+  return {
+    title: t(locale, 'home.title', 'Welcome to Spelle.nl') + ' - Free Online Games',
+    description: t(locale, 'home.description', 'Play thousands of free online games at Spelle.nl. No downloads required. Action, strategy, puzzle, and more games available.'),
+    keywords: 'free online games, browser games, action games, strategy games, puzzle games, no download games',
+    openGraph: {
+      title: t(locale, 'home.title', 'Welcome to Spelle.nl') + ' - Free Online Games',
+      description: t(locale, 'home.description', 'Play thousands of free online games at Spelle.nl. No downloads required.'),
+      type: 'website',
+      locale: locale,
+    },
+  };
+}
+
+export default async function Home({ params }) {
+  const { locale } = await params;
   const { t } = useTranslations(locale);
 
   return (
-    <div>
-      {/* Hero and Featured Games Section with Background */}
-      <div className="relative">
-        {/* Hero Background */}
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="/hero-bg.png"
-            alt="Hero Background"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+    <div className="relative">
+      {/* Hero Background */}
+      <div className="absolute inset-0 opacity-20">
+        <Image
+          src="/hero-bg.png"
+          alt="Hero Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
-        {/* Hero Content */}
+      {/* Hero Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-2 z-10 p-10">
           <div>
             <div className="flex flex-col items-center lg:items-start mb-6">
@@ -754,15 +753,17 @@ export default function Home({ params }) {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Featured Games Section */}
+      {/* Featured Games Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 px-10 pb-10">
           <div className="mb-8">
             <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.featuredGames', 'Featured Games')}</h2>
             <p className="text-gray-400">{t('home.featuredGamesSubtitle', 'Discover the most popular games')}</p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {featuredGames.map((game, index) => (
               <GameCard 
                 key={game.id}
@@ -783,7 +784,8 @@ export default function Home({ params }) {
       {/* Remaining sections with continuous gradient background */}
       <div className="bg-gradient-to-br from-[var(--brand-background)] via-[#121252] to-[[var(--brand-background)]">
         {/* Top 10 Games Section */}
-        <div className="px-10 pt-10 pb-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-10 pt-10 pb-10">
           <div className="mb-8">
             <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.top10Games', 'Top 10 Games of All Time')}</h2>
             <p className="text-gray-400">{t('home.top10GamesSubtitle', 'The most legendary games ever created')}</p>
@@ -818,13 +820,15 @@ export default function Home({ params }) {
               </CarouselNext>
             </Carousel>
           </div>
+          </div>
         </div>
         <div className="flex justify-center">
           <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
         </div>
         
         {/* Most Popular This Week Section */}
-        <div className="px-10 pb-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-10 pb-10">
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
@@ -869,13 +873,15 @@ export default function Home({ params }) {
               </CarouselNext>
             </Carousel>
           </div>
+          </div>
         </div>
         <div className="flex justify-center">
           <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
         </div>
         
         {/* Latest Games Section */}
-        <div className="px-10 pb-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-10 pb-10">
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
@@ -920,13 +926,15 @@ export default function Home({ params }) {
               </CarouselNext>
             </Carousel>
           </div>
+          </div>
         </div>
         <div className="flex justify-center">
           <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
         </div>
         
         {/* Action Games Section */}
-        <div className="px-10 pb-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-10 pb-10">
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
@@ -971,13 +979,15 @@ export default function Home({ params }) {
               </CarouselNext>
             </Carousel>
           </div>
+          </div>
         </div>
         <div className="flex justify-center">
           <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
         </div>
         
         {/* Strategy Games Section */}
-        <div className="px-10 pb-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-10 pb-10">
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
@@ -1022,13 +1032,15 @@ export default function Home({ params }) {
               </CarouselNext>
             </Carousel>
           </div>
+          </div>
         </div>
         <div className="flex justify-center">
           <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
         </div>
         
         {/* Categories Section */}
-        <div className="px-10 pb-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-10 pb-10">
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
@@ -1077,13 +1089,15 @@ export default function Home({ params }) {
               </Link>
             ))}
           </div>
+          </div>
         </div>
         <div className="flex justify-center">
           <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
         </div>
         
         {/* Blogs Section */}
-        <div className="px-10 pb-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-10 pb-10">
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
@@ -1155,12 +1169,12 @@ export default function Home({ params }) {
               </CarouselNext>
             </Carousel>
           </div>
+          </div>
         </div>
         <div className="flex justify-center">
           <AdBanner showPlaceholder={true} variant="largeLeaderboard" />
         </div>
       </div>
-      
     </div>
   );
 }

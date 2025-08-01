@@ -1,39 +1,45 @@
 'use client';
 
+import { memo, useMemo } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 
-export default function GameCard({ 
+const GameCard = memo(function GameCard({ 
   game, 
   index, 
   isTop10 = false, 
   isFeatured = false,
   locale 
 }) {
-  const getImageHeight = () => {
+  // Memoize computed values to prevent unnecessary re-renders
+  const imageHeight = useMemo(() => {
     if (isFeatured && index === 0) {
       return 'lg:max-w-full h-[150px] lg:h-[400px]';
     }
     return 'h-[150px] lg:max-w-[300px]';
-  };
+  }, [isFeatured, index]);
 
-  const getCardClasses = () => {
+  const cardClasses = useMemo(() => {
     if (isFeatured && index === 0) {
       return 'lg:col-span-2 lg:row-span-2';
     } else if (isTop10) {
       return '';
     }
     return '';
-  };
+  }, [isFeatured, index, isTop10]);
 
   return (
-    <div className={`cursor-pointer group w-full min-w-0 ${getCardClasses()}`}>
-      <div className={`relative mb-3 w-full ${getImageHeight()}`}>
+    <div className={`cursor-pointer group w-full min-w-0 ${cardClasses}`}>
+      <div className={`relative mb-3 w-full ${imageHeight}`}>
         <Image 
           src={game.image} 
           alt={game.title} 
           fill
           className="object-cover rounded-sm"
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         
         {/* Ranking Number for Top 10 */}
@@ -52,7 +58,7 @@ export default function GameCard({
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff]/50 via-[#303E7B]/50 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-sm">
           <div className="absolute top-3 right-3">
-            <Link href={`/${locale}/game/${game.slug}`}>
+            <Link href={`/${locale}/game/${game.slug}`} prefetch={false}>
               <div className="bg-[var(--brand-background)] rounded-md px-4 py-2 transition-colors flex items-center gap-2">
                 <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z"/>
@@ -80,4 +86,6 @@ export default function GameCard({
       <h3 className="text-white font-semibold text-lg mb-2">{game.title}</h3>
     </div>
   );
-} 
+});
+
+export default GameCard; 

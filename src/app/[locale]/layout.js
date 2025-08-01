@@ -14,10 +14,13 @@ const rubik = Rubik({
 
 export default function LocaleLayout({ children, params }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const { locale } = use(params);
 
   // Handle responsive behavior
   useEffect(() => {
+    setIsClient(true);
+    
     let timeoutId;
     
     const handleResize = () => {
@@ -38,6 +41,16 @@ export default function LocaleLayout({ children, params }) {
     // Add event listener for resize events only
     window.addEventListener('resize', handleResize);
 
+    // Performance monitoring for navigation components
+    if (typeof window !== 'undefined') {
+      console.log('🎯 Navigation Components Loaded:', {
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        viewport: `${window.innerWidth}x${window.innerHeight}`,
+        sidebarState: isSidebarOpen
+      });
+    }
+
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -57,17 +70,25 @@ export default function LocaleLayout({ children, params }) {
         />
       </head>
       <body className={rubik.className}>
-        <TopNav isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} locale={locale} />
-        <div className="flex">
-          <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} locale={locale} />
-          <main className={`flex-grow transition-all duration-300 ease-in-out mt-16 ${
-            isSidebarOpen 
-              ? 'lg:ml-[250px]' 
-              : 'lg:ml-[4rem]'
-          }`}>
+        {isClient ? (
+          <>
+            <TopNav isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} locale={locale} />
+            <div className="flex">
+              <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} locale={locale} />
+              <main className={`flex-grow transition-all duration-300 ease-in-out mt-16 ${
+                isSidebarOpen 
+                  ? 'lg:ml-[250px]' 
+                  : 'lg:ml-[4rem]'
+              }`}>
+                {children}
+              </main>
+            </div>
+          </>
+        ) : (
+          <div className="min-h-screen bg-[var(--brand-background)]">
             {children}
-          </main>
-        </div>
+          </div>
+        )}
       </body>
     </html>
   );
