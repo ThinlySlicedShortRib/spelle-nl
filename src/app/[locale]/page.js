@@ -171,14 +171,14 @@ export default async function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.mostPopularThisWeek', 'Most Popular This Week')}</h2>
-                <p className="text-gray-400">{t('home.mostPopularThisWeekSubtitle', 'Trending games this week')}</p>
+                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t(locale, 'home.mostPopularThisWeek', 'Most Popular This Week')}</h2>
+                <p className="text-gray-400">{t(locale, 'home.mostPopularThisWeekSubtitle', 'Trending games this week')}</p>
               </div>
               <Link 
                 href={`/${locale}/categories/most-popular-this-week`}
                 className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
-                {t('home.seeAll', 'See All')}
+                {t(locale, 'home.seeAll', 'See All')}
               </Link>
             </div>
           </div>
@@ -224,14 +224,14 @@ export default async function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.latestGames', 'Latest Games')}</h2>
-                <p className="text-gray-400">{t('home.latestGamesSubtitle', 'New games released recently')}</p>
+                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t(locale, 'home.latestGames', 'Latest Games')}</h2>
+                <p className="text-gray-400">{t(locale, 'home.latestGamesSubtitle', 'New games released recently')}</p>
               </div>
               <Link 
                 href={`/${locale}/categories/latest-games`}
                 className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
-                {t('home.seeAll', 'See All')}
+                {t(locale, 'home.seeAll', 'See All')}
               </Link>
             </div>
           </div>
@@ -277,14 +277,14 @@ export default async function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.actionGames', 'Action Games')}</h2>
-                <p className="text-gray-400">{t('home.actionGamesSubtitle', 'High-octane action and adventure')}</p>
+                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t(locale, 'home.actionGames', 'Action Games')}</h2>
+                <p className="text-gray-400">{t(locale, 'home.actionGamesSubtitle', 'High-octane action and adventure')}</p>
               </div>
               <Link 
                 href={`/${locale}/categories/action`}
                 className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
-                {t('home.seeAll', 'See All')}
+                {t(locale, 'home.seeAll', 'See All')}
               </Link>
             </div>
           </div>
@@ -330,14 +330,14 @@ export default async function Home({ params }) {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div>
-                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t('home.strategyGames', 'Strategy Games')}</h2>
-                <p className="text-gray-400">{t('home.strategyGamesSubtitle', 'Think, plan, and conquer')}</p>
+                <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent mb-2">{t(locale, 'home.strategyGames', 'Strategy Games')}</h2>
+                <p className="text-gray-400">{t(locale, 'home.strategyGamesSubtitle', 'Think, plan, and conquer')}</p>
               </div>
               <Link 
                 href={`/${locale}/categories/strategy`}
                 className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
-                {t('home.seeAll', 'See All')}
+                {t(locale, 'home.seeAll', 'See All')}
               </Link>
             </div>
           </div>
@@ -390,15 +390,15 @@ export default async function Home({ params }) {
                     width={48} 
                     height={48}
                   />
-                  <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent">{t('home.categories', 'Game Categories')}</h2>
+                  <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent">{t(locale, 'home.categories', 'Game Categories')}</h2>
                 </div>
-                <p className="text-gray-400">{t('home.categoriesSubtitle', 'Explore games by category')}</p>
+                <p className="text-gray-400">{t(locale, 'home.categoriesSubtitle', 'Explore games by category')}</p>
               </div>
               <Link 
                 href={`/${locale}/categories`}
                 className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
-                {t('home.seeAll', 'See All')}
+                {t(locale, 'home.seeAll', 'See All')}
               </Link>
             </div>
           </div>
@@ -447,15 +447,15 @@ export default async function Home({ params }) {
                     width={48} 
                     height={48}
                   />
-                  <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent">{t('home.blogs', 'Gaming Blog')}</h2>
+                  <h2 className="text-4xl font-semibold bg-gradient-to-r from-white to-[var(--brand-active)] bg-clip-text text-transparent">{t(locale, 'home.blogs', 'Gaming Blog')}</h2>
                 </div>
-                <p className="text-gray-400">{t('home.blogsSubtitle', 'Latest insights and gaming news')}</p>
+                <p className="text-gray-400">{t(locale, 'home.blogsSubtitle', 'Latest insights and gaming news')}</p>
               </div>
               <Link 
                 href={`/${locale}/blogs`}
                 className="border border-[var(--brand-active)] text-[var(--brand-active)] hover:bg-[var(--brand-active)] hover:text-white px-4 py-2 rounded-full transition-colors duration-200 text-md font-medium self-start sm:self-auto"
               >
-                {t('home.seeAll', 'See All')}
+                {t(locale, 'home.seeAll', 'See All')}
               </Link>
             </div>
           </div>
